@@ -9,14 +9,14 @@ function InitCrypto() {
     cryptoObject = JSON.parse('[{"Bitcoin": "BTC","Ethereum": "ETH","Ripple": "XRP","Bitcoin Cash": "BCH","Cardano": "ADA","Litecoin": "LTC","Dash": "DASH","Monero": "XHR","Bitcoin Gold": "BTG","Ethereum Classic": "ETC","Zcash": "ZEC"}]');
 
     function objectToArray(thisObject) {
-        var newArray = Object.keys(thisObject).map(function(k) { 
+        let newArray = Object.keys(thisObject).map(function(k) { 
             return thisObject[k];
         });
     
         return newArray;
     }
     
-    let cryptoArray = objectToArray(cryptoObject[0]);
+    var cryptoArray = objectToArray(cryptoObject[0]);
     fsyms = new Array();
 
     for (let a = 0; a <= cryptoArray.length - 1; a++) {
@@ -24,7 +24,7 @@ function InitCrypto() {
     }
     fsyms = fsyms.join(",");
 
-    let request = new XMLHttpRequest();
+    var request = new XMLHttpRequest();
     request.open('GET', `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${fsyms}&tsyms=USD`);
     request.responseType = 'json';
 
