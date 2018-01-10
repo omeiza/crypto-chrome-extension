@@ -1,0 +1,73 @@
+:root {
+    --light: #F7F7F7;
+    --white: rgb(255, 255, 255);
+    --foreground: var(--white);
+    --background: var(--light);
+    --fontStack: 'Helvetica Neue', monospace, sans-serif;
+}
+  
+* {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    box-sizing: border-box;
+    font: inherit;
+}
+  
+html {
+    font-size: 100%;
+    font-family: var(--fontStack);
+    line-height: 1.75;
+    background-color: var(--background);
+    color: var(--foreground);
+    -webkit-font-smoothing: antialiased;
+    -webkit-font-feature-settings: "liga","hist","onum";
+    font-feature-settings: "liga","hist","onum";
+}
+  
+body {
+    max-width: 50rem;
+    margin: 0 auto;
+    padding: 6rem 3rem 3rem;
+    padding-bottom: 0;
+}
+
+.credit {
+    color: #bbbbbb;
+    text-align: right;
+    font-size: 90%;
+    margin-top: 5px;
+}
+
+.credit a {
+    color: #bbbbbb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.crypto__list {
+    width: 100%;
+    max-width: 100%;
+    background-color: #3b507e;
+    border-radius: 3px;
+    border-collapse: collapse;
+}
+
+.crypto__list th,
+.crypto__list td {
+    padding: 10px 20px;
+    border: 1px solid #4d648a;
+}
+
+.crypto__list td {
+    color: #bcbfc5;
+}
+
+.crypto__list--header {
+    font-weight: 700;
+}
+
+.crypto__list--header,
+.crypto__list {
+    text-align: left;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link href="./style.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <table class="crypto__list" style="display: none;">
+            <thead class="crypto__list--header">
+                <tr>
+                    <th>#</th>
+                    <th>Crypto</th>
+                    <th>Price</th>
+                    <th>Circulating Supply</th>
+                    <th>Change (24h)</th>
+                </tr>
+            </thead>
+            <tbody class="crypto__list--body">
+                <template id="table__row--template">
+                    <tr>
+                        <td data-role = "numbering"></td>
+                        <td data-role = "symbol" style="font-weight: 700"></td>
+                        <td data-role = "price"></td>
+                        <td data-role = "volume"></td>
+                        <td data-role = "change"></td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+        <p class="credit" style="display: none;">Made by <a href="https://twitter.com/Mr_Omeiza" target="_blank">Omeiza Owuda</a></p>
+        <script src="./script.js"></script>
+    </body>
+</html>
