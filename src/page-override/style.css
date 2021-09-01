@@ -1,32 +1,21 @@
-:root {
-    --light: #F7F7F7;
-    --white: rgb(255, 255, 255);
-    --foreground: var(--white);
-    --background: var(--light);
-    --fontStack: 'Helvetica Neue', monospace, sans-serif;
-}
-  
 * {
     margin: 0;
     padding: 0;
     position: relative;
     box-sizing: border-box;
-    font: inherit;
 }
   
 html {
-    font-size: 100%;
-    font-family: var(--fontStack);
+    font-size: 13px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI Variable","Segoe UI",system-ui,ui-sans-serif,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
     line-height: 1.75;
-    background-color: var(--background);
-    color: var(--foreground);
+    background-color: #22272e;
+    color: #adbac7;
     -webkit-font-smoothing: antialiased;
-    -webkit-font-feature-settings: "liga","hist","onum";
-    font-feature-settings: "liga","hist","onum";
 }
   
 body {
-    max-width: 50rem;
+    width: 720px;
     margin: 0 auto;
     padding: 6rem 3rem 3rem;
     padding-bottom: 0;
@@ -35,32 +24,50 @@ body {
 .credit {
     color: #bbbbbb;
     text-align: right;
-    font-size: 90%;
+    font-size: 110%;
     margin-top: 5px;
 }
 
 .credit a {
-    color: #bbbbbb;
+    color: #316dca;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .crypto__list {
     width: 100%;
     max-width: 100%;
-    background-color: #3b507e;
-    border-radius: 3px;
-    border-collapse: collapse;
+    background-color: #22272e;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #282f38;
+    border-radius: 10px;
 }
 
 .crypto__list th,
 .crypto__list td {
     padding: 10px 20px;
-    border: 1px solid #4d648a;
+    border: 1px solid #282f38;
+}
+
+.crypto__list tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+}
+
+.crypto__list tr:last-child th:last-child {
+    border-top-right-radius: 10px;
+}
+
+.crypto__list tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+.crypto__list tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
 }
 
 .crypto__list td {
-    color: #bcbfc5;
+    color: #adbac7;
 }
 
 .crypto__list--header {

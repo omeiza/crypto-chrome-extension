@@ -1,22 +1,23 @@
 // C H R O M E  C R Y P T O
-// Omeiza Owuda wrote this code
+// Chrome extension that lists popular crypto, their prices and volume
 
-function InitCrypto() {
+const cryptoChromeExtension = {};
+
+cryptoChromeExtension.objectToArray = (thisObject) => {
+    let newArray = Object.keys(thisObject).map((k) => {
+        return thisObject[k];
+    });
+
+    return newArray;
+}
+
+cryptoChromeExtension.initCrypto = () => {
     const tableRowTemplate = document.getElementById('table__row--template').content.querySelector('tr'),
-    Table = document.querySelector('.crypto__list'),
-    tableRowBody = Table.querySelector('.crypto__list--body'),
-    tableRowHeader = Table.querySelector('.crypto__list--header'),
+    table = document.querySelector('.crypto__list'),
+    tableRowBody = table.querySelector('.crypto__list--body'),
     cryptoObject = JSON.parse('[{"Bitcoin": "BTC","Ethereum": "ETH","Ripple": "XRP","Bitcoin Cash": "BCH","Cardano": "ADA","Litecoin": "LTC","Dash": "DASH","Monero": "XHR","Bitcoin Gold": "BTG","Ethereum Classic": "ETC","Zcash": "ZEC"}]');
 
-    function objectToArray(thisObject) {
-        let newArray = Object.keys(thisObject).map(function(k) { 
-            return thisObject[k];
-        });
-    
-        return newArray;
-    }
-    
-    var cryptoArray = objectToArray(cryptoObject[0]);
+    let cryptoArray = cryptoChromeExtension.objectToArray(cryptoObject[0]);
     fsyms = new Array();
 
     for (let a = 0; a <= cryptoArray.length - 1; a++) {
@@ -24,16 +25,16 @@ function InitCrypto() {
     }
     fsyms = fsyms.join(",");
 
-    var request = new XMLHttpRequest();
+    let request = new XMLHttpRequest();
     request.open('GET', `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${fsyms}&tsyms=USD`);
     request.responseType = 'json';
 
     request.onload = function() {
       if (request.status === 200) {
-        let responseArray = objectToArray(request.response["DISPLAY"]);
+        let responseArray = cryptoChromeExtension.objectToArray(request.response["DISPLAY"]);
 
         if (responseArray.length > 0) {
-            Table.style.display = 'table';
+            table.style.display = 'table';
             document.querySelector('.credit').style.display = 'block';
         }
 
@@ -66,6 +67,6 @@ function InitCrypto() {
     };
 
     request.send();
-};
+}
 
-InitCrypto();
+cryptoChromeExtension.initCrypto();
