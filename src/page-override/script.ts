@@ -3,7 +3,7 @@
  * Chrome extension that lists popular crypto, their prices and volume
  */
 
-function renderCryptoData() {
+function renderCryptoData(): void {
     function objectToArray(thisObject: object): any[]  {
         return Object.keys(thisObject).map((k) => {
             return thisObject[k];
@@ -18,7 +18,7 @@ function renderCryptoData() {
     // Fetch API
     fetch(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${objectToArray(cryptoObject[0]).join(",")}&tsyms=USD`)
         .then((response) => {
-            return response.json()
+            return response.json();
         })
 
         .then((data) => {
