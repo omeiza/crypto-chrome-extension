@@ -1,0 +1,15 @@
+{
+  "name": "crypto-chrome-extension",
+  "version": "1.0.0",
+  "description": "Chrome Crypto is a Chrome Extension that replaces your New Tab page with a price information of popular cryptocurrencies using the [Crypto Compare API](https://min-api.cryptocompare.com/).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  }
+}
